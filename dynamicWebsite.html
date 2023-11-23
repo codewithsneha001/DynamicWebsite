@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="icon" type="image/jpg" href="media/icon1.jpg">
+
+    <style>
+        body {
+            height: auto;
+            width: 100%;
+            background-image: url(media/mbg.webp);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        
+        a:link {
+            color: green;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        
+        a:visited {
+            color: white;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: red;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            color: yellow;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+        
+        .navbar {
+            width: 88%;
+            margin: auto;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-attachment: fixed;
+        }
+        
+        .logo {
+            width: 100px;
+            cursor: pointer;
+            border-radius: 15px;
+            background-attachment: fixed;
+        }
+        
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 15px;
+            color: darkgreen;
+        }
+        
+        .navbar ul li a {
+            text-decoration: none;
+            color: rgb(97, 18, 18);
+            font-size: 10px;
+        }
+        
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 30%;
+            background-attachment: fixed;
+        }
+        
+        .left-col {
+            margin-left: 6%;
+            margin-top: 10%;
+            background-attachment: fixed;
+        }
+        
+        .left-col h1 {
+            font-size: 90px;
+            color: #fff;
+            line-height: 110px;
+            float: left;
+            background-attachment: fixed;
+        }
+        
+        .right-col {
+            display: flex;
+            align-items: center;
+            margin-top: 120px;
+            background-attachment: fixed;
+        }
+        
+        .right-col p {
+            font-size: 20px;
+            color: #875181;
+            font-weight: 400;
+            margin-top: 120px;
+            margin-left: 20%;
+            display: inline-block;
+            background-attachment: fixed;
+        }
+        
+        #icon {
+            width: 45px;
+            cursor: pointer;
+            margin-top: 110px;
+            display: inline-block;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <img src="media/icon1.jpg" class="logo">
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="#">ABOUT</a>
+            </li>
+            <li>
+                <a href="#">SPECIFICATIONS</a>
+            </li>
+            <li>
+                <a href="#">PRODUCTS</a>
+            </li>
+            <li>
+                <a href="#">CONNECT</a>
+            </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="left-col">
+                <h1>THE
+                    <br>REAL<br> SOUND<br></h1>
+            </div>
+            <div class="right-col">
+                <p>Click Here To Listen</p>
+                <img src="media/play.png" id="icon">
+            </div>
+        </div>
+    </div>
+    <audio id="mySong">
+        <source src="media/song.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
+        icon.onclick = function() {
+            if (mySong.paused) {
+                mySong.play();
+                icon.src = "media/pause.png";
+            } else {
+                mySong.pause();
+                icon.src = "media/play.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
